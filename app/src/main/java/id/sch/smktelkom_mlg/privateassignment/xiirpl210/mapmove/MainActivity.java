@@ -17,27 +17,27 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    static final CameraPosition IND = CameraPosition.builder()
-            .target(new LatLng(0.7893, 113.9213))
-            .zoom(17)
+    static final CameraPosition NEWYORK = CameraPosition.builder()
+            .target(new LatLng(40.784, -73.9857))
+            .zoom(21)
             .bearing(0)
             .tilt(45)
             .build();
 
-    static final CameraPosition TULUNGAGUNG = CameraPosition.builder()
-            .target(new LatLng(8.0912, 111.9642))
+    static final CameraPosition SEATTLE = CameraPosition.builder()
+            .target(new LatLng(47.6204, -122.3491))
             .zoom(17)
             .bearing(0)
             .tilt(45)
             .build();
-    static final CameraPosition NGAWI = CameraPosition.builder()
+    static final CameraPosition DUBLIN = CameraPosition.builder()
             .target(new LatLng(7.4610, 111.3322))
             .zoom(17)
             .bearing(0)
             .tilt(45)
             .build();
-    static final CameraPosition BANDUNG = CameraPosition.builder()
-            .target(new LatLng(6.9175, 107.6191))
+    static final CameraPosition TOKYO = CameraPosition.builder()
+            .target(new LatLng(35.6895, 139.6917))
             .zoom(17)
             .bearing(90)
             .tilt(45)
@@ -51,30 +51,30 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnTulungagung = (Button) findViewById(R.id.btnTulungagung);
-        btnTulungagung.setOnClickListener(new View.OnClickListener() {
+        Button btnNewYork = (Button) findViewById(R.id.btnNewYork);
+        btnNewYork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mapReady)
-                    flyTo(TULUNGAGUNG);
+                    flyTo(NEWYORK);
             }
         });
 
-        Button btnNgawi = (Button) findViewById(R.id.btnNgawi);
-        btnNgawi.setOnClickListener(new View.OnClickListener() {
+        Button btnSeattle = (Button) findViewById(R.id.btnSeattle);
+        btnSeattle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mapReady)
-                    flyTo(NGAWI);
+                    flyTo(SEATTLE);
             }
         });
 
-        Button btnBandung = (Button) findViewById(R.id.btnBandung);
-        btnBandung.setOnClickListener(new View.OnClickListener() {
+        Button btnDublin = (Button) findViewById(R.id.btnDublin);
+        btnDublin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mapReady)
-                    flyTo(BANDUNG);
+                    flyTo(DUBLIN);
             }
         });
 
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapReady = true;
         m_map = map;
         m_map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-        flyTo(IND);
+        flyTo(TOKYO);
     }
 
     @Override
